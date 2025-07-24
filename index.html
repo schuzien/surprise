@@ -46,7 +46,7 @@
 
 <div class="bubble" id="start">
   <h1>Mission secrète</h1>
-  <p>Prêt à découvrir ta surprise ? Réponds aux énigmes !</p>
+  <p>Prêt à découvrir ta surprise ? </br> Réponds aux énigmes !</p>
   <button onclick="showStep('q1')">Commencer</button>
 </div>
 
@@ -59,7 +59,7 @@ Qui suis-je ? »</p>
 </div>
 
 <div class="bubble hidden" id="q2">
-  <p>« On y trouve parfois des jeux, Des bancs pour se reposer un peu,</br>Des arbres, des fleurs, parfois des canards,</br> C’est un coin de verdure au cœur des boulevards.</br>Quel est ce lieu où l’on aime se promener ? »</p>
+  <p>« On y trouve parfois des jeux,</br> Des bancs pour se reposer un peu,</br>Des arbres, des fleurs, parfois des canards,</br> C’est un coin de verdure au cœur des boulevards.</br>Quel est ce lieu où l’on aime se promener ? »</p>
   <input type="text" id="a2">
   <button onclick="checkAnswer('a2','parc','q3')">Valider</button>
 </div>
@@ -71,7 +71,7 @@ Qui suis-je ? »</p>
 </div>
 
 <div class="bubble hidden" id="q4">
-  <p>« Peuple amateur de sangliers, qui résiste encore et toujours à l’envahisseur. Qui sont-ils ? »</p>
+  <p>« Peuple amateur de sangliers, qui résiste encore et toujours à l’envahisseur.</br> Qui sont-ils ? »</p>
   <input type="text" id="a4">
   <button onclick="checkAnswer('a4','les gaulois','q5')">Valider</button>
 </div>
@@ -100,7 +100,7 @@ function checkAnswer(inputId, correctAnswer, nextId) {
   if(userAnswer === correctAnswer) {
     showStep(nextId);
   } else {
-    alert('Essaie encore, courageux Gaulois !');
+    alert('Essaie encore ❤️');
   }
 }
 </script>
