@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Gauloise 🎉</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(259.81deg,#EBF1EE 15.24%,#EEF0A9 99.56%); /* #f5e8c7 */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+  .bubble {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  input[type=text] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    width: 80%;
+    margin: 10px 0;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #f4d03f;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="bubble" id="start">
+  <h1>Mission secrète</h1>
+  <p>Prêt à découvrir ta surprise ? Réponds aux énigmes !</p>
+  <button onclick="showStep('q1')">Commencer</button>
+</div>
+
+<div class="bubble hidden" id="q1">
+  <p>« Je ne suis jamais vieux,</br> Je viens tout juste d’apparaître,</br>
+Parfois synonyme de moderne ou récent, </br>Je remplace l’ancien en apportant du changement.</br>
+Qui suis-je ? »</p>
+  <input type="text" id="a1">
+  <button onclick="checkAnswer('a1','nouveau','q2')">Valider</button>
+</div>
+
+<div class="bubble hidden" id="q2">
+  <p>« On y trouve parfois des jeux, Des bancs pour se reposer un peu,</br>Des arbres, des fleurs, parfois des canards,</br> C’est un coin de verdure au cœur des boulevards.</br>Quel est ce lieu où l’on aime se promener ? »</p>
+  <input type="text" id="a2">
+  <button onclick="checkAnswer('a2','parc','q3')">Valider</button>
+</div>
+
+<div class="bubble hidden" id="q3">
+  <p>« Je brille la nuit sans m’éteindre,</br> Je suis connue du monde entier.</br> Sur mon fleuve on peut descendre,</br> Et mes musées font rêver.</br> Capitale d’un pays romantique,</br> Devine mon nom… je suis ? »</p>
+  <input type="text" id="a3">
+  <button onclick="checkAnswer('a3','paris','q4')">Valider</button>
+</div>
+
+<div class="bubble hidden" id="q4">
+  <p>« Peuple amateur de sangliers, qui résiste encore et toujours à l’envahisseur. Qui sont-ils ? »</p>
+  <input type="text" id="a4">
+  <button onclick="checkAnswer('a4','les gaulois','q5')">Valider</button>
+</div>
+
+<div class="bubble hidden" id="q5">
+  <p>« Petit guerrier à moustache, casque ailé sur la tête, héros de la résistance… Qui suis-je ? »</p>
+  <input type="text" id="a5">
+  <button onclick="checkAnswer('a5','astérix','final')">Valider</button>
+</div>
+
+<div class="bubble hidden" id="final">
+  <h2>🎉 Bravo ! 🎉</h2>
+  <p>Joyeux anniversaire bébé chou ❤️<br>
+  On part ensemble à <strong>Paris</strong>… et surtout au <strong>Parc Astérix !</strong> 🏰✨</p>
+  <img src="assets/parc.png" alt="" width="300px">
+</div>
+
+<script>
+function showStep(id) {
+  document.querySelectorAll('.bubble').forEach(el => el.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+function checkAnswer(inputId, correctAnswer, nextId) {
+  let userAnswer = document.getElementById(inputId).value.trim().toLowerCase();
+  if(userAnswer === correctAnswer) {
+    showStep(nextId);
+  } else {
+    alert('Essaie encore, courageux Gaulois !');
+  }
+}
+</script>
+
+</body>
+</html>
